@@ -1,0 +1,70 @@
+<form #addProduct="ngForm" (submit)="saveProduct(addProduct)">
+    <div class="mb-3 mt-3">
+        <label for="txtName">Product Name </label>
+        <input required type="text" [(ngModel)]="product.Name" name="Name" class="form-control" id = "txtName"/>
+
+    </div>
+    <div class="mb-3">
+        <label for="txtSup">Supplier ID</label>
+        <input required type="number" [(ngModel)]="product.SupplierId" name="SupplierId" class="form-control" id = "txtSup"/>
+
+    </div>  
+    <div class="mb-3">
+        <label for="txtCat">Category ID</label>
+        <input required type="number" [(ngModel)]="product.CategoryId" name="CategoryId" class="form-control" id = "txtCat"/>
+
+    </div>  
+    <div class="mb-3">
+        <label for="txtQua">Quantity Per Unit</label>
+        <input required type="number" [(ngModel)]="product.QuantityPerUnit" name="QuantityPerUnit" class="form-control" id = "txtQua"/>
+
+    </div>  
+
+<div class="mb-3">
+    <label for="txtUni">Unit Price</label>
+    <input required type="number" [(ngModel)]="product.UnitPrice" name="UnitPrice" class="form-control" id = "txtUni"/>
+
+</div>  
+
+<div class="mb-3">
+    <label for="txtUnits">Units In Stock</label>
+    <input required type="number" [(ngModel)]="product.UnitsInStock" name="UnitsInStock" class="form-control" id = "txtUnits"/>
+
+</div>  
+
+<div class="mb-3">
+    <label for="txtUnitsOn">Units On Order</label>
+    <input required type="number" [(ngModel)]="product.UnitsOnOrder" name="UnitsOnOrder" class="form-control" id = "txtUnitsOn"/>
+
+</div>  
+
+
+<div class="mb-3">
+    <label for="txtReo">Reorder Level</label>
+    <input required type="number" [(ngModel)]="product.ReorderLevel" name="ReorderLevel" class="form-control" id = "txtReo"/>
+
+</div>  
+
+    <div class="mb-3">
+        <label for="txtDis">Discontinued?</label>
+        <select name ="Discontinued" [(ngModel)]="product.Discontinued" class="form-control" id = txtDis type = "number">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+    </div>  
+    <div class="mb-3">
+        <label for="txtVen">Vendor ID</label>
+        <input required type="number" [(ngModel)]="product.VendorId" name="VendorId" class="form-control" id = "txtVen"/>
+
+    </div> 
+     
+    <input type="submit" [disabled]="!addProduct.valid" value="Save Product" class="btn btn-primary "/>
+    <input type="button" class="btn btn-warning" value="Reset" (click)="resetForm(addProduct)">
+    <div class = "mb-3" *ngIf="!addProduct.valid">
+        <p> All fields are required </p>
+    </div>
+
+    <br>
+
+
+</form>

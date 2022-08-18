@@ -1,0 +1,29 @@
+<table class="table table-striped table-hover">
+    <thead>
+       <tr>
+           <th>ID</th>
+           <th>Name</th>
+           <th>UnitPrice</th>
+           <th>Discontinued</th>
+           <th>Options</th>
+       </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let e of proCollection; index as i">
+           <td>{{i+1}}</td>
+           <td>{{e.Name}}</td>
+           <td>{{e.UnitPrice}}</td>
+           <td>{{e.Discontinued}}</td>
+           <ng-container *ngIf="e.Discontinued; else notDiscontinued">
+                <td>Yes</td>
+           </ng-container>
+           <ng-template #notDiscontinued>
+                <td>No</td>
+           </ng-template>
+
+           <td>
+               <input type="button" class="btn btn-link" value="Edit" (click)="editProduct(e.Id)" />
+           </td>
+       </tr>
+    </tbody>
+   </table>

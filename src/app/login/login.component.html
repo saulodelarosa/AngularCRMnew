@@ -1,0 +1,13 @@
+
+<h1 class="display-4">Login Form</h1>
+<form #loginForm="ngForm" (submit)="loginUser(loginForm)">
+    <div class="mb-3">
+        <label>Enter Username</label>
+    <input type="email" name="email" required class="form-control" [(ngModel)]="loginModel.email" required="true"/>
+</div>
+<div class="mb-3">
+        <label>Enter Password</label>
+    <input type="password" name="password" required class="form-control" [(ngModel)]="loginModel.password" required="true"/>
+</div>
+<input type="submit" value="Log In" class="btn btn-primary" [disabled]="!loginForm.valid"/>
+</form>
