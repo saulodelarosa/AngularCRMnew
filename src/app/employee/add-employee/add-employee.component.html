@@ -1,4 +1,4 @@
-<form #addEmployee="ngForm" (submit) ="insertEmployee(addEmployee)" >
+<form #addEmployee="ngForm" (submit) ="saveEmployee(addEmployee)" >
     <div class="row">
         <div class="col-4">
             <div class="mb-3">
@@ -13,24 +13,27 @@
             </div>
         </div>
 
-        <div class="col-4">    
+    </div>
+
+    <div class="row">
+        <div class="col-3">    
             <div class="mb-3">
                 <label for="txtTitle">Title</label>
                 <input id="txtTitle" [(ngModel)]="employee.Title" name="Title" class="form-control"/>
             </div>
+        </div>
+
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtCourtesy">Title Of Courtesy</label>
+                <input id="txtCourtesy" [(ngModel)]="employee.TitleOfCourtesy" name="TitleOfCourtesy" class="form-control"/>
+            </div> 
         </div>
         
     </div>
 
 
    <div class="row">
-    
-        <div class="col-4">
-            <div class="mb-3">
-                <label for="txtCourtesy">Title Of Courtesy</label>
-                <input id="txtCourtesy" [(ngModel)]="employee.TitleOfCourtesy" name="TitleOfCourtesy" class="form-control"/>
-            </div> 
-        </div>
     
 
         <div class="col-4">
@@ -43,7 +46,7 @@
         <div class="col-4">
             <div class="mb-3">
                 <label for="txtHiredate">Hire Date</label>
-                <input type="date" id="txtHiredate" [(ngModel)]="employee.HireDate" name="Hiredate" class="form-control"/>
+                <input type="date" id="txtHiredate" [(ngModel)]="employee.HireDate" name="HireDate" class="form-control"/>
             </div>
         </div>
 
@@ -62,24 +65,24 @@
         </div>
 
 
-
-        <div class="col-4">
+        <div class="col-3">
             <div class="mb-3">
-                <label for="txtRegionId">RegionId</label>
-            <input id="txtRegionId" [(ngModel)]="employee.RegionId" name="RegionId" class="form-control"/>
+                <label for="txtCity">City</label>
+            <input id="txtCity" [(ngModel)]="employee.City" name="City" class="form-control"/>
             </div>
         </div>
 
-        <div class="col-4">
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-2">
             <div class="mb-3">
                 <label for="txtPostalCode">PostalCode</label>
             <input id="txtPostalCode" [(ngModel)]="employee.PostalCode" name="PostalCode" class="form-control"/>
             </div>
         </div>
-
-    </div>
-
-    <div class="row">
 
         <div class="col-3">
             <div class="mb-3">
@@ -88,6 +91,12 @@
             </div>
         </div>
 
+
+    </div>
+
+    <div class="row">
+
+
         <div class="col-3">
             <div class="mb-3">
                 <label for="txtPhone">Phone</label>
@@ -95,28 +104,39 @@
             </div>
         </div>
 
-
-
-    <div class="col-3">
-        <div class="mb-3">
-            <label for="ddlReports">Reports To</label>
-            <select id="ddlReports" [(ngModel)]="employee.ReportsTo" name="ReportsTo" class="form-control">
-                <option value="0">Select</option>
-                <option value="1">Olivia</option>
-                <option value="2">Sarah</option>
-            </select>
-        </div> 
-    </div>
-
-    <div class="col-3">
-        <div class="mb-3">
-            <label for="txtPhotoPath">PhotoPath</label>
-        <input id="txtPhotoPath" [(ngModel)]="employee.PhotoPath" name="PhotoOath" class="form-control"/>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtRegionId">RegionId</label>
+            <input id="txtRegionId" [(ngModel)]="employee.RegionId" name="RegionId" class="form-control"/>
+            </div>
         </div>
+
     </div>
 
-   </div>
+
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="ddlReports">Reports To</label>
+                <select id="ddlReports" [(ngModel)]="employee.ReportsTo" name="ReportsTo" class="form-control">
+                    <option value="0">Select</option>
+                    <option value="1">Olivia</option>
+                    <option value="2">Sarah</option>
+                </select>
+            </div> 
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtPhotoPath">Photo Link</label>
+            <input id="txtPhotoPath" [(ngModel)]="employee.PhotoPath" name="PhotoOath" class="form-control"/>
+            </div>
+        </div>
+
+    </div>
 
     <input type="submit" value="Add Employee" class="btn btn-primary"/>
-    <input type="button" value="Cancel" class="btn btn-default" (click)="resetPage(addEmployee)"/>
+    <input type="button" value="Clear" class="btn btn-default" (click)="resetPage(addEmployee)"/>
 </form>

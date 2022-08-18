@@ -30,7 +30,7 @@ employee:Employee ={
   ngOnInit(): void {
   }
 
-  insertEmployee(form:NgForm){
+  saveEmployee(form:NgForm){
     console.log(form.value)
   }
   resetPage(form:NgForm){
