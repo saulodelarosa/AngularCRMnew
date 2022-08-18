@@ -12,18 +12,21 @@ import { EmployeeService } from '../../../services/employee.service';
 export class EditEmployeeComponent implements OnInit {
   id:number=0;
   employee:Employee ={
-    firstName: '',
-    lastName:'',
-    city:'',
-    title:'',
-    hireDate:new Date(),
-    birthDate:new Date(),
-    region:0,
-    reportsTo:0,
-    titleOfCourtesy:'',
-    regionName:'',
-    fullName:'',
-  id:0
+    id:0,
+    FirstName:'',
+    LastName:'',
+    Title:'',
+    TitleOfCourtesy:'',
+    BirthDate:new Date(),
+    HireDate:new Date(),
+    Address:'',
+    City:'',
+    RegionId:0,
+    PostalCode:0,
+    Country:0,
+    Phone:'',
+    ReportsTo:0,
+    PhotoPath:''
   }
   
   constructor(private activatedRoute:ActivatedRoute, private empService:EmployeeService) { 

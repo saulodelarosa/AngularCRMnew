@@ -2,7 +2,8 @@
  <thead>
     <tr>
         <th>ID</th>
-        <th>Name</th>
+        <th>First Name</th>
+        <th>Last Name</th>
         <th>City</th>
         <th>Region</th>
         <th>Options</th>
@@ -11,9 +12,10 @@
  <tbody>
     <tr *ngFor="let e of empCollection; index as i">
         <td>{{i+1}}</td>
-        <td>{{e.fullName}}</td>
-        <td>{{e.city}}</td>
-        <td>{{e.regionName}}</td>
+        <td>{{e.FirstName}}</td>
+        <td>{{e.LastName}}</td>
+        <td>{{e.City}}</td>
+        <td>{{e.RegionId}}</td>
         <td>
             <input type="button" class="btn btn-link" value="Edit" (click)="editEmployee(e.id)" />
         </td>
