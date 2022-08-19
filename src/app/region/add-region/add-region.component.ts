@@ -3,6 +3,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Region } from '../../../interface/region';
 import { RegionService } from '../../../services/region.service';
 import { RegionModule } from '../region.module';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-add-region',
@@ -19,7 +21,7 @@ export class AddRegionComponent implements OnInit {
   isSuccessful:boolean=false;
   
  
-  constructor(private builder:FormBuilder, private regionService:RegionService) {
+  constructor(private builder:FormBuilder, private regionService:RegionService, private router:Router) {
     this.addRegionForm= builder.group({
       'regionName':new FormControl(null,[Validators.required,Validators.minLength(4)])
     });
@@ -35,6 +37,10 @@ export class AddRegionComponent implements OnInit {
      this.regionService.insertRegion(this.region).subscribe((d:any)=>{
       this.isSuccessful=true;
      });
+
+     if(this.isSuccessful){
+      this.router.navigate(['region/list/']);
+     }
     
   }
 

@@ -12,6 +12,7 @@ import { TokenInterceptor } from '../interceptors/token.interceptor';
 import { LayoutModule } from './layout/layout.module';
 import { RouterModule } from '@angular/router';
 import { ProductModule } from './product/product.module';
+import { CustomerModule } from './customer/customer.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductModule } from './product/product.module';
     FormsModule,
     LayoutModule,
     RouterModule,
-    ProductModule
+    ProductModule,
+    CustomerModule
   ],
   providers: [
   ],

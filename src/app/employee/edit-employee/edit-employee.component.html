@@ -1,68 +1,148 @@
-<input type="button" value="fill data" (click)="setData(addEmployee)" />
-<form   #addEmployee="ngForm" (submit) ="editEmployee(addEmployee)" >
+<div *ngIf="isSuccessful"  class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Employee has been Edited</strong> 
+</div>
+
+<input class="btn btn-default" type="button" value="Load Current Data" (click)="setData(addEmployee)" />
+
+
+
+<form  #addEmployee="ngForm" (load) ="setData(addEmployee)" (submit) ="editEmployee(addEmployee)" >
+
     <div class="row">
         <div class="col-4">
             <div class="mb-3">
                 <label for="txtFName">First Name</label>
-            <input id="txtFName" required [(ngModel)]="employee.firstName" name="firstName" class="form-control"/>
+            <input id="txtFName" [(ngModel)]="employee.firstName" name="firstName" class="form-control" required="true"/>
         </div>
         </div>
         <div class="col-4">
             <div class="mb-3">
                 <label for="txtLName">Last Name</label>
-            <input id="txtLName"  [(ngModel)]="employee.lastName" name="lastName" class="form-control"/>
+            <input id="txtLName" [(ngModel)]="employee.lastName" name="lastName" class="form-control" required="true"/>
             </div>
         </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-3">    
+            <div class="mb-3">
+                <label for="txtTitle">Title</label>
+                <input id="txtTitle" [(ngModel)]="employee.title" name="title" class="form-control" required="true"/>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtCourtesy">Title Of Courtesy</label>
+                <input id="txtCourtesy" [(ngModel)]="employee.titleOfCourtesy" name="titleOfCourtesy" class="form-control" required="true"/>
+            </div> 
+        </div>
+        
+    </div>
+
+
+   <div class="row">
+    
+
         <div class="col-4">
             <div class="mb-3">
-                <label for="txtCity">City</label>
-            <input id="txtCity" [(ngModel)]="employee.city" name="city" class="form-control"/>
+                <label for="txtbirthdate">Birth Date</label>
+                <input type="datetime" id="txtBirthdate" [(ngModel)]="employee.birthDate" name="birthDate" class="form-control" required="true"/>
             </div>
         </div>
-    </div>
-   <div class="row">
-    <div class="col-4">
-        
-<div class="mb-3">
-    <label for="txtTitle">Title</label>
-<input id="txtTitle" [(ngModel)]="employee.title" name="title" class="form-control"/>
-</div>
-    </div>
-    
-    <div class="col-4">
-        <div class="mb-3">
-            <label for="txtCourtesy">Title Of Courtesy</label>
-        <input id="txtCourtesy" [(ngModel)]="employee.titleOfCourtesy" name="titleOfCourtesy" class="form-control"/>
+
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtHiredate">Hire Date</label>
+                <input type="datetime" id="txtHiredate" [(ngModel)]="employee.hireDate" name="hireDate" class="form-control" required="true"/>
+            </div>
         </div>
-        
-    </div>
-    
-    <div class="col-4"><div class="mb-3">
-        <label for="txtHiredate">Hire Date</label>
-    <input type="date" id="txtHiredate" [(ngModel)]="employee.hireDate" name="hiredate" class="form-control"/>
-    </div>
-    </div>
-   </div>
-   <div class="row">
-    <div class="col-4">
-        <div class="mb-3">
-            <label for="txtbirthdate">Birth Date</label>
-        <input type="date" id="txtBirthdate" [(ngModel)]="employee.birthDate" name="birthDate" class="form-control"/>
-        </div>
-    </div>
-    <div class="col-4">
-        <div class="mb-3">
-            <label for="ddlReports">Reports To</label>
-        <select id="ddlReports" [(ngModel)]="employee.reportsTo" name="reportsTo" class="form-control">
-            <option value="0">Select</option>
-            <option value="1">Olivia</option>
-            <option value="2">Sarah</option>
-            </select>
-        </div>
-        
-    </div>
+
+
+
    </div>
 
+
+   <div class="row">
+
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtAddress">Address</label>
+            <input id="txtAddress" [(ngModel)]="employee.address" name="address" class="form-control" required="true"/>
+            </div>
+        </div>
+
+
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtCity">City</label>
+            <input id="txtCity" [(ngModel)]="employee.city" name="city" class="form-control" required="true"/>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtPostalCode">PostalCode</label>
+            <input id="txtPostalCode" [(ngModel)]="employee.postalCode" name="postalCode" class="form-control" required="true"/>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtCountry">Country</label>
+            <input id="txtCountry" [(ngModel)]="employee.country" name="country" class="form-control" required="true"/>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+
+
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtPhone">Phone</label>
+            <input id="txtPhone" [(ngModel)]="employee.phone" name="phone" class="form-control" required="true"/>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtRegionId">RegionId</label>
+            <input id="txtRegionId" [(ngModel)]="employee.regionId" name="regionId" class="form-control" required="true"/>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtreportsTo">Reports To ID</label>
+                <input id="txtreportsTo" [(ngModel)]="employee.reportsTo" name="reportsTo" class="form-control" required="true"/>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtPhotoPath">Photo Link</label>
+            <input id="txtPhotoPath" [(ngModel)]="employee.photoPath" name="photoPath" class="form-control" required="true"/>
+            </div>
+        </div>
+
+    </div>
+
     <input type="submit" value="Edit Employee" class="btn btn-primary"/>
-    <input type="button" value="Cancel" class="btn btn-default"/>
+    <input type="button" value="Clear" class="btn btn-default" (click)="resetPage(addEmployee)"/>
 </form>
+

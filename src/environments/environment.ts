@@ -11,7 +11,8 @@ export const environment = {
     region:"region",
     accountsignup:"account/signup",
     accountlogin:"account/login",
-    product:"product"
+    product:"product",
+    customer:"customer"
   }
  
 };
