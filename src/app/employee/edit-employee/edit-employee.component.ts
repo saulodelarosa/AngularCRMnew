@@ -13,20 +13,20 @@ export class EditEmployeeComponent implements OnInit {
   id:number=0;
   employee:Employee ={
     id:0,
-    FirstName:'',
-    LastName:'',
-    Title:'',
-    TitleOfCourtesy:'',
-    BirthDate:new Date(),
-    HireDate:new Date(),
-    Address:'',
-    City:'',
-    RegionId:0,
-    PostalCode:0,
-    Country:0,
-    Phone:'',
-    ReportsTo:0,
-    PhotoPath:''
+    firstName:'',
+    lastName:'',
+    title:'',
+    titleOfCourtesy:'',
+    birthDate:new Date(),
+    hireDate:new Date(),
+    address:'',
+    city:'',
+    regionId:0,
+    postalCode:0,
+    country:'',
+    phone:'',
+    reportsTo:0,
+    photoPath:''
   }
   
   constructor(private activatedRoute:ActivatedRoute, private empService:EmployeeService) { 

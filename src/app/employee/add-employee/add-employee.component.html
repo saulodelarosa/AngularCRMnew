@@ -3,13 +3,13 @@
         <div class="col-4">
             <div class="mb-3">
                 <label for="txtFName">First Name</label>
-            <input id="txtFName" [(ngModel)]="employee.FirstName" name="FirstName" class="form-control"/>
+            <input id="txtFName" [(ngModel)]="employee.firstName" name="firstName" class="form-control"/>
         </div>
         </div>
         <div class="col-4">
             <div class="mb-3">
                 <label for="txtLName">Last Name</label>
-            <input id="txtLName" [(ngModel)]="employee.LastName" name="LastName" class="form-control"/>
+            <input id="txtLName" [(ngModel)]="employee.lastName" name="lastName" class="form-control"/>
             </div>
         </div>
 
@@ -19,14 +19,14 @@
         <div class="col-3">    
             <div class="mb-3">
                 <label for="txtTitle">Title</label>
-                <input id="txtTitle" [(ngModel)]="employee.Title" name="Title" class="form-control"/>
+                <input id="txtTitle" [(ngModel)]="employee.title" name="title" class="form-control"/>
             </div>
         </div>
 
         <div class="col-3">
             <div class="mb-3">
                 <label for="txtCourtesy">Title Of Courtesy</label>
-                <input id="txtCourtesy" [(ngModel)]="employee.TitleOfCourtesy" name="TitleOfCourtesy" class="form-control"/>
+                <input id="txtCourtesy" [(ngModel)]="employee.titleOfCourtesy" name="titleOfCourtesy" class="form-control"/>
             </div> 
         </div>
         
@@ -39,14 +39,14 @@
         <div class="col-4">
             <div class="mb-3">
                 <label for="txtbirthdate">Birth Date</label>
-                <input type="date" id="txtBirthdate" [(ngModel)]="employee.BirthDate" name="BirthDate" class="form-control"/>
+                <input type="date" id="txtBirthdate" [(ngModel)]="employee.birthDate" name="birthDate" class="form-control"/>
             </div>
         </div>
 
         <div class="col-4">
             <div class="mb-3">
                 <label for="txtHiredate">Hire Date</label>
-                <input type="date" id="txtHiredate" [(ngModel)]="employee.HireDate" name="HireDate" class="form-control"/>
+                <input type="date" id="txtHiredate" [(ngModel)]="employee.hireDate" name="hireDate" class="form-control"/>
             </div>
         </div>
 
@@ -60,7 +60,7 @@
         <div class="col-4">
             <div class="mb-3">
                 <label for="txtAddress">Address</label>
-            <input id="txtAddress" [(ngModel)]="employee.Address" name="Address" class="form-control"/>
+            <input id="txtAddress" [(ngModel)]="employee.address" name="address" class="form-control"/>
             </div>
         </div>
 
@@ -68,7 +68,7 @@
         <div class="col-3">
             <div class="mb-3">
                 <label for="txtCity">City</label>
-            <input id="txtCity" [(ngModel)]="employee.City" name="City" class="form-control"/>
+            <input id="txtCity" [(ngModel)]="employee.city" name="city" class="form-control"/>
             </div>
         </div>
 
@@ -80,14 +80,14 @@
         <div class="col-2">
             <div class="mb-3">
                 <label for="txtPostalCode">PostalCode</label>
-            <input id="txtPostalCode" [(ngModel)]="employee.PostalCode" name="PostalCode" class="form-control"/>
+            <input id="txtPostalCode" [(ngModel)]="employee.postalCode" name="postalCode" class="form-control"/>
             </div>
         </div>
 
         <div class="col-3">
             <div class="mb-3">
                 <label for="txtCountry">Country</label>
-            <input id="txtCountry" [(ngModel)]="employee.Country" name="Country" class="form-control"/>
+            <input id="txtCountry" [(ngModel)]="employee.country" name="country" class="form-control"/>
             </div>
         </div>
 
@@ -100,14 +100,14 @@
         <div class="col-3">
             <div class="mb-3">
                 <label for="txtPhone">Phone</label>
-            <input id="txtPhone" [(ngModel)]="employee.Phone" name="Phone" class="form-control"/>
+            <input id="txtPhone" [(ngModel)]="employee.phone" name="phone" class="form-control"/>
             </div>
         </div>
 
         <div class="col-2">
             <div class="mb-3">
                 <label for="txtRegionId">RegionId</label>
-            <input id="txtRegionId" [(ngModel)]="employee.RegionId" name="RegionId" class="form-control"/>
+            <input id="txtRegionId" [(ngModel)]="employee.regionId" name="regionId" class="form-control"/>
             </div>
         </div>
 
@@ -118,7 +118,7 @@
         <div class="col-3">
             <div class="mb-3">
                 <label for="ddlReports">Reports To</label>
-                <select id="ddlReports" [(ngModel)]="employee.ReportsTo" name="ReportsTo" class="form-control">
+                <select id="ddlReports" [(ngModel)]="employee.reportsTo" name="reportsTo" class="form-control">
                     <option value="0">Select</option>
                     <option value="1">Olivia</option>
                     <option value="2">Sarah</option>
@@ -131,12 +131,12 @@
         <div class="col-4">
             <div class="mb-3">
                 <label for="txtPhotoPath">Photo Link</label>
-            <input id="txtPhotoPath" [(ngModel)]="employee.PhotoPath" name="PhotoOath" class="form-control"/>
+            <input id="txtPhotoPath" [(ngModel)]="employee.photoPath" name="photoPath" class="form-control"/>
             </div>
         </div>
 
     </div>
 
-    <input type="submit" value="Add Employee" class="btn btn-primary"/>
+    <input type="submit" value="Add Employee" class="btn btn-primary" />
     <input type="button" value="Clear" class="btn btn-default" (click)="resetPage(addEmployee)"/>
 </form>

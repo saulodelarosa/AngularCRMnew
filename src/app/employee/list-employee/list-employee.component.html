@@ -11,11 +11,11 @@
  </thead>
  <tbody>
     <tr *ngFor="let e of empCollection; index as i">
-        <td>{{i+1}}</td>
-        <td>{{e.FirstName}}</td>
-        <td>{{e.LastName}}</td>
-        <td>{{e.City}}</td>
-        <td>{{e.RegionId}}</td>
+        <td>{{e.id}}</td>
+        <td>{{e.firstName}}</td>
+        <td>{{e.lastName}}</td>
+        <td>{{e.city}}</td>
+        <td>{{e.regionId}}</td>
         <td>
             <input type="button" class="btn btn-link" value="Edit" (click)="editEmployee(e.id)" />
         </td>

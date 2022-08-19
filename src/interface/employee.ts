@@ -1,17 +1,17 @@
 export interface Employee{
     id:number
-    FirstName: string,
-    LastName:string,
-    Title:string,
-    TitleOfCourtesy:string,
-    BirthDate:Date,
-    HireDate:Date,
-    Address:string,
-    City:string,
-    RegionId:number,
-    PostalCode:number,
-    Country:number,
-    Phone:string,
-    ReportsTo:number,
-    PhotoPath:string
+    firstName: string,
+    lastName:string,
+    title:string,
+    titleOfCourtesy:string,
+    birthDate:Date,
+    hireDate:Date,
+    address:string,
+    city:string,
+    regionId:number,
+    postalCode:number,
+    country:string,
+    phone:string,
+    reportsTo:number,
+    photoPath:string
 }
