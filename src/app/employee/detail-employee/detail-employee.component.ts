@@ -12,6 +12,9 @@ import { Router } from '@angular/router';
 })
 export class DetailEmployeeComponent implements OnInit {
 
+  empCollection:Employee[]=[]
+
+
   id:number=0;
   employee:Employee ={
     id:0,
@@ -41,6 +44,7 @@ export class DetailEmployeeComponent implements OnInit {
 
   ngOnInit(): void {
     this.setData();
+    this.getAllEmps();
   }
 
 
@@ -49,5 +53,16 @@ export class DetailEmployeeComponent implements OnInit {
     this.employee=d;
   })
 }
+
+getAllEmps(){
+  this.empService.getAllEmployee().subscribe(d=>{
+    this.empCollection=d;
+  })
+  }
+
+  detail(id:any){
+    this.router.navigate(['employee/detail/'+id]);
+    this.setData();
+     }
 
 }
