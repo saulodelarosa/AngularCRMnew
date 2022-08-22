@@ -8,6 +8,7 @@ import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 import { EmployeeService } from '../../services/employee.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '../../interceptors/token.interceptor';
+import { DetailEmployeeComponent } from './detail-employee/detail-employee.component';
 
 
 
@@ -15,7 +16,8 @@ import { TokenInterceptor } from '../../interceptors/token.interceptor';
   declarations: [
     AddEmployeeComponent,
     ListEmployeeComponent,
-    EditEmployeeComponent
+    EditEmployeeComponent,
+    DetailEmployeeComponent
   ],
   imports: [
     CommonModule,

@@ -26,7 +26,11 @@ url:string= environment.apiKey+environment.apiControllers.employee;
     return this.httpClient.post(this.url,employee);
   }
 
-
+  deleteEmployee(id:any):Observable<any>
+  {
+    //return this.httpClient.delete(this.url+id)
+    return this.httpClient.delete("https://localhost:7256/api/Employee/"+ id)
+  }
 
 
 }

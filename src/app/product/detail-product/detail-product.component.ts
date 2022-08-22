@@ -5,12 +5,11 @@ import { Product } from '../../../interface/product';
 import { ProductService } from '../../../services/product.service';
 
 @Component({
-  selector: 'app-edit-product',
-  templateUrl: './edit-product.component.html',
-  styleUrls: ['./edit-product.component.scss']
+  selector: 'app-detail-product',
+  templateUrl: './detail-product.component.html',
+  styleUrls: ['./detail-product.component.scss']
 })
-export class EditProductComponent implements OnInit {
-
+export class DetailProductComponent implements OnInit {
   id:number=0;
 
   product:Product ={
@@ -33,21 +32,13 @@ export class EditProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setData();
   }
- setData(ngForm:NgForm){
+ setData(){
   this.proService.getProById(this.id).subscribe(d=>{
     this.product=d;
   })
- ngForm.setValue(this.product)
 }
 
-
-editProduct(ngForm:NgForm)
-{
-  this.product= ngForm.value;
-  this.proService.updateProduct(this.product).subscribe(d=>{
-
-  });
-}
 
 }

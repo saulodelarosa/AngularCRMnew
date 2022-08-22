@@ -10,13 +10,15 @@ import { ProductService } from '../../../services/product.service';
   styleUrls: ['./list-product.component.scss']
 })
 export class ListProductComponent implements OnInit {
+
   proCollection:Product[]=[]
+  
   constructor(private proService:ProductService, private router:Router) { }
 
   ngOnInit(): void {
-    this.getAllEmps();
+    this.getAllPro();
   }
-  getAllEmps(){
+  getAllPro(){
   this.proService.getAllProduct().subscribe(d=>{
     this.proCollection=d;
   })
@@ -24,4 +26,15 @@ export class ListProductComponent implements OnInit {
   editProduct(id:any){
  this.router.navigate(['product/edit/'+id]);
   }
+
+  detail(id:any){
+    this.router.navigate(['product/detail/'+id]);
+     }
+
+  deleteProduct(id:any){
+    this.proService.deleteProduct(id).subscribe((d:any)=>{
+     this.getAllPro();
+    });
+   }
+
 }

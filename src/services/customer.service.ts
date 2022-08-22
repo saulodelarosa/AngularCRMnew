@@ -26,7 +26,11 @@ url:string= environment.apiKey+environment.apiControllers.customer;
     return this.httpClient.post(this.url,customer);
   }
 
-
+  deleteCustomer(id:any):Observable<any>
+  {
+    //return this.httpClient.delete(this.url+id)
+    return this.httpClient.delete("https://localhost:7256/api/Customer/"+ id)
+  }
 
 
 }

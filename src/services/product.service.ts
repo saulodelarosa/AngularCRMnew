@@ -12,10 +12,10 @@ url:string= environment.apiKey+environment.apiControllers.product;
 
   getAllProduct():Observable<Product[]>
   {
-    return this.httpClient.get<Product[]>(this.url);
+    return this.httpClient.get<Product[]>("https://localhost:7256/api/Product/GetAll");
   }
-  getEmpById(id:any):Observable<Product>{
-    return this.httpClient.get<Product>(this.url+id)
+  getProById(id:any):Observable<Product>{
+    return this.httpClient.get<Product>("https://localhost:7256/api/Product/GetById/"+id)
   }
 
   updateProduct(product:Product):Observable<any>{
@@ -25,5 +25,11 @@ url:string= environment.apiKey+environment.apiControllers.product;
   insertProduct(product:Product):Observable<any>
   {
     return this.httpClient.post(this.url,product);
+  }
+
+  deleteProduct(id:any):Observable<any>
+  {
+    //return this.httpClient.delete(this.url+id)
+    return this.httpClient.delete("https://localhost:7256/api/Product/"+ id)
   }
 }

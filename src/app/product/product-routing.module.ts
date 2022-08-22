@@ -4,11 +4,14 @@ import { RouterModule, Routes } from "@angular/router";
 import { AddProductComponent } from "./add-product/add-product.component";
 import { EditProductComponent } from "./edit-product/edit-product.component";
 import { ListProductComponent } from "./list-product/list-product.component";
+import { DetailProductComponent } from "./detail-product/detail-product.component";
 
 const routes:Routes=[
     {path:'add', component:AddProductComponent },
     {path:'list', component:ListProductComponent},
-    {path:'edit/:id',component:EditProductComponent}
+    {path:'edit/:id',component:EditProductComponent},
+    {path:'detail/:id',component:DetailProductComponent}
+
 
 ]
 @NgModule({

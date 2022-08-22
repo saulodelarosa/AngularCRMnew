@@ -4,25 +4,31 @@
            <th>ID</th>
            <th>Name</th>
            <th>UnitPrice</th>
+           <th>Units In Stock</th>
            <th>Discontinued</th>
            <th>Options</th>
        </tr>
     </thead>
     <tbody>
        <tr *ngFor="let e of proCollection; index as i">
-           <td>{{i+1}}</td>
-           <td>{{e.Name}}</td>
-           <td>{{e.UnitPrice}}</td>
-           <td>{{e.Discontinued}}</td>
-           <ng-container *ngIf="e.Discontinued; else notDiscontinued">
-                <td>Yes</td>
+           <td>{{e.id}}</td>
+           <td>{{e.name}}</td>
+           <td>{{e.unitPrice}}</td>
+           <td>{{e.unitsInStock}}</td>
+           <td>
+           <ng-container *ngIf="e.discontinued; else notDiscontinued">
+                Yes
            </ng-container>
            <ng-template #notDiscontinued>
-                <td>No</td>
+                No
            </ng-template>
+        </td>
 
            <td>
-               <input type="button" class="btn btn-link" value="Edit" (click)="editProduct(e.Id)" />
+               <input type="button" class="btn btn-primary" value="Edit" (click)="editProduct(e.id)" />
+               <input type="button" class="btn btn-danger" value="Delete" (click)="deleteProduct(e.id)" />
+               <input type="button" class="btn btn-success" value="Details" (click)="detail(e.id)" />
+
            </td>
        </tr>
     </tbody>

@@ -17,7 +17,10 @@
         <td>{{e.city}}</td>
         <td>{{e.regionId}}</td>
         <td>
-            <input type="button" class="btn btn-link" value="Edit" (click)="editEmployee(e.id)" />
+            <input type="button" class="btn btn-primary" value="Edit" (click)="editEmployee(e.id)" />
+            <input type="button" class="btn btn-danger" value="Delete" (click)="deleteEmployee(e.id)" />
+            <input type="button" class="btn btn-success" value="Detail" (click)="detail(e.id)" />
+
         </td>
     </tr>
  </tbody>
