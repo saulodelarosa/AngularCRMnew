@@ -12,7 +12,8 @@ export const environment = {
     accountsignup:"account/signup",
     accountlogin:"account/login",
     product:"product",
-    customer:"customer"
+    customer:"customer",
+    vendor:"vendor",
   }
  
 };

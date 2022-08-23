@@ -17,6 +17,11 @@ loadChildren:()=>import('./product/product.module').then(x=>x.ProductModule)
 {
 path:'customer',
 loadChildren:()=>import('./customer/customer.module').then(x=>x.CustomerModule)
+},
+
+{
+  path:'Vendor',
+  loadChildren:()=>import('./vendor/vendor.module').then(x=>x.VendorModule)
 }
 
 ];

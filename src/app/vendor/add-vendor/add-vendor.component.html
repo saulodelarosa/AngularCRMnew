@@ -1,0 +1,50 @@
+<h1>Add Vendor</h1>
+<form #addVendor="ngForm" (submit)="saveVendor(addVendor)">
+    <div class="mb-3 mt-3">
+        <label for="txtName">Vendor Name </label>
+        <input required type="text" [(ngModel)]="vendor.name" name="name" class="form-control" id = "txtName"/>
+
+    </div>
+    <div class="mb-3">
+        <label for="txtSup">City</label>
+        <input required type="text" [(ngModel)]="vendor.city" name="city" class="form-control" id = "txtSup"/>
+
+    </div>  
+    <div class="mb-3">
+        <label for="txtCat">Country</label>
+        <input required type="text" [(ngModel)]="vendor.country" name="country" class="form-control" id = "txtCat"/>
+
+    </div>  
+    <div class="mb-3">
+        <label for="txtQua">Mobile</label>
+        <input required type="text" [(ngModel)]="vendor.mobile" name="mobile" class="form-control" id = "txtQua"/>
+
+    </div>  
+
+<div class="mb-3">
+    <label for="txtUni">Email</label>
+    <input required type="text" [(ngModel)]="vendor.emailId" name="emailId" class="form-control" id = "txtUni"/>
+
+</div>  
+
+
+
+    <div class="mb-3">
+        <label for="txtDis">IsActive?</label>
+        <select name ="isActive" [(ngModel)]="vendor.isActive" class="form-control" id = txtDis>
+            <option [ngValue]="false">No</option>
+            <option [ngValue]="true">Yes</option>
+        </select>
+    </div>  
+    
+     
+    <input type="submit" [disabled]="!addVendor.valid" value="Save Vendor" class="btn btn-primary "/>
+    <input type="button" class="btn btn-warning" value="Reset" (click)="resetForm(addVendor)">
+    <div class = "mb-3" *ngIf="!addVendor.valid">
+        <p> All fields are required </p>
+    </div>
+
+    <br>
+
+
+</form>
