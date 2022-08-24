@@ -5,12 +5,13 @@ import { AddProductComponent } from "./add-product/add-product.component";
 import { EditProductComponent } from "./edit-product/edit-product.component";
 import { ListProductComponent } from "./list-product/list-product.component";
 import { DetailProductComponent } from "./detail-product/detail-product.component";
+import { AuthGuardGuard } from "src/guard/auth-guard.guard";
 
 const routes:Routes=[
-    {path:'add', component:AddProductComponent },
-    {path:'list', component:ListProductComponent},
-    {path:'edit/:id',component:EditProductComponent},
-    {path:'detail/:id',component:DetailProductComponent}
+    {path:'add', component:AddProductComponent,canActivate:[AuthGuardGuard] },
+    {path:'list', component:ListProductComponent, canActivate:[AuthGuardGuard]},
+    {path:'edit/:id',component:EditProductComponent, canActivate:[AuthGuardGuard]},
+    {path:'detail/:id',component:DetailProductComponent, canActivate:[AuthGuardGuard]}
 
 
 ]

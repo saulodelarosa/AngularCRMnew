@@ -20,7 +20,7 @@ loadChildren:()=>import('./customer/customer.module').then(x=>x.CustomerModule)
 },
 
 {
-  path:'Vendor',
+  path:'vendor',
   loadChildren:()=>import('./vendor/vendor.module').then(x=>x.VendorModule)
 }
 
